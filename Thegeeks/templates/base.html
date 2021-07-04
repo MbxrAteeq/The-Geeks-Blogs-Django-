@@ -44,29 +44,12 @@
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
       </form>
 
-
-
-{% if user.is_authenticated %}
-
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-     Welcome {{request.user}}
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="/logout">Logout</a>
-    <a class="dropdown-item" href="#">Another action</a>
-  </div>
-</div>
-
-
-{% else %}
       <!-- Button trigger Login modal -->
       <button type="button" class="btn btn-primary mx-2" data-toggle="modal" data-target="#loginModal">
         Login</button>
       <!-- Button trigger Signn up modal -->
       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signupModal">
         SignUp</button>
-{% endif %}
 
     
     </div>
@@ -88,38 +71,38 @@
         </div>
         <div class="modal-body">
 
-          <form action='/signup' method='post'>{% csrf_token %}
+          <form action='/signup' method='post'>
             <div class="form-group">
               <label for="username">Username</label>
-              <input type="text" class="form-control" id="username" name = "username" placeholder="username" required>
+              <input type="text" class="form-control" id="username" placeholder="username">
             </div>
 
             <div class="form-group">
               <label for="fame">First Name</label>
-              <input type="text" class="form-control" id="fname" name="fname" placeholder="First Name" required>
+              <input type="text" class="form-control" id="fname" name="fname" placeholder="First Name">
             </div>
 
             <div class="form-group">
               <label for="lame">Last Name</label>
-              <input type="text" class="form-control" id="lname" name="lname" placeholder="Last Name" required>
+              <input type="text" class="form-control" id="lname" name="lname" placeholder="Last Name">
             </div>
 
             <div class="form-group">
               <label for="exampleFormControlInput1">Email address</label>
-              <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" required>
+              <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
             </div>
 
             <div class="form-group">
               <label for="pass1">Enter Password</label>
-              <input type="passeord" class="form-control" id="pass1" name="pass1" placeholder="Enter New Password" required>
+              <input type="passeord" class="form-control" id="pass1" name="pass1" placeholder="Enter New Password">
             </div>
 
             <div class="form-group">
               <label for="pass2">Confirm Password</label>
-              <input type="passeord" class="form-control" id="pass2" name="pass2" placeholder="Enter Password Again" required>
+              <input type="passeord" class="form-control" id="pass2" name="pass2" placeholder="Enter Password Again">
             </div>
 
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="button" class="btn btn-primary">Submit</button>
           </form>
 
         </div>
@@ -143,19 +126,18 @@
         </div>
         <div class="modal-body">
 
-          <form action='/login' method='post'>
-            {% csrf_token %}
+          <form>
             <div class="form-group">
               <label for="loginusername">Username</label>
-              <input type="text" class="form-control" id="loginusername" name="loginusername" placeholder="Username" required>
+              <input type="text" class="form-control" id="loginusername" placeholder="Username">
             </div>
 
             <div class="form-group">
               <label for="pass">Password</label>
-              <input type="passeord" class="form-control" id="loginpass" name="loginpass" placeholder="Enter Your Password" required>
+              <input type="passeord" class="form-control" id="pass" name="pass" placeholder="Enter Your Password">
             </div>
 
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="button" class="btn btn-primary">Submit</button>
           </form>
 
         </div>
